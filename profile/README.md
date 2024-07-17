@@ -1,5 +1,10 @@
 ## Hi there 👋
 
+The source code is available here.
+
+For usage instructions, see [wiki](https://github.com/litejs/ui/wiki)
+and [Quick-Start](https://github.com/litejs/litejs/wiki/Quick-Start) guide.
+
 <!--
 
 **Here are some ideas to get you started:**
