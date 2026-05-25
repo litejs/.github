@@ -29,6 +29,4 @@ jobs:
         GH_TOKEN: ${{ github.token }}
         TAG: ${{ github.ref_name }}
     - run: npm publish --provenance --access public --tag $PUBLISH
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
