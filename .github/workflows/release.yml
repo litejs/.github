@@ -8,7 +8,7 @@ jobs:
       id-token: write
       packages: write
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
         ref: ${{ github.ref }}
     - run: |
@@ -16,8 +16,9 @@ jobs:
         git config gpg.ssh.allowedSignersFile ./allowed_signers
         git verify-tag -v ${{ github.ref_name }}
       name: Verify release tag signature
-    - uses: actions/setup-node@v5
+    - uses: actions/setup-node@v6
       with:
+        node-version: 24.x
         registry-url: https://registry.npmjs.org/
     - run: |
         MSG=$(git log -1 --no-show-signature --format=%B $TAG)
