@@ -2,12 +2,19 @@ on: [ workflow_call ]
 jobs:
   Analyze:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
     steps:
     - uses: actions/checkout@v5
     - uses: github/codeql-action/init@v4
       with:
-        languages: javascript
+        queries: code-quality
+        build-mode: none
+        languages: javascript-typescript
+        config: |
+          paths-ignore:
+            - test
     - uses: github/codeql-action/analyze@v4
       with:
-        category: /language:javascript
-
+        category: /language:javascript-typescript
